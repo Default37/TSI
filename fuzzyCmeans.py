@@ -3,13 +3,14 @@ from sklearn.datasets import make_blobs
 from matplotlib import pyplot as plt
 from seaborn import scatterplot as scatter
 
-n_samples = 3000 # decide o numero de pontos a serem gerados
+n_samples = 300 # decide o numero de pontos a serem gerados
 n_bins = 3  # use n bins for calibration_curve as we have n clusters here
 centers = [(-5, -5), (0, 0), (5, 5)] # define o centro dos clusters
 
 # gera os pontos aleatórios
 X,_ = make_blobs(n_samples=n_samples, n_features=2, cluster_std=1.0,
                   centers=centers, shuffle=False, random_state=42)
+
 
 # fit the fuzzy-c-means
 fcm = FCM(n_clusters=3) #define fcm como uma variável fuzzy c means com n clusters
